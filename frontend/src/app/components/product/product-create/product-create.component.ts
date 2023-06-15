@@ -1,3 +1,4 @@
+import { ProductService } from './../product.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent {
-
+  constructor(private ProductService: ProductService){}
+  ngOnInit(): void {
+    this.ProductService.showOnConsole('teste...')
+  }
 }
