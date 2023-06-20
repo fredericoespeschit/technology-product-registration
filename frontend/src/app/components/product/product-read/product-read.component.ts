@@ -9,13 +9,14 @@ import { Product } from '../products.model';
 })
 export class ProductReadComponent {
   products: Product[] = [];
+  displayedColumns =  ['id', 'name', 'price'];
 
   constructor (private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
       this.products = products;
-      console.log(products)
+      // console.log(products)
     })
   }
 }
