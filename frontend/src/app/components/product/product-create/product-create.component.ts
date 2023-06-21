@@ -14,13 +14,14 @@ export class ProductCreateComponent {
     price: 125.98
   }
   constructor(private ProductService: ProductService,
-    private router: Router ){}
+    private router: Router) { }
+  
   ngOnInit(): void {
-    
+
   }
 
   createProduct(): void {
-    this.ProductService.create(this.product).subscribe(()=>{
+    this.ProductService.create(this.product).subscribe(() => {
       this.ProductService.showMessage('Produto salvo!');
       this.router.navigate(['/products']);
     });

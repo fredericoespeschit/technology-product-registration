@@ -17,9 +17,13 @@ export class ProductUpdateComponent {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.productService.readById(id!).subscribe(product => {
-      this.product = product;
-    })
+    if(id !== null) {
+      const numericId = +id;
+      this.productService.readById(numericId).subscribe(product => {
+        this.product = product;
+      })
+    }
+   
   }
 
   updateProduct(): void {
