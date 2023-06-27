@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError, EMPTY, map, Observable } from 'rxjs';
+
 import { Product } from './products.model';
-import { EMPTY, Observable, catchError, map } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,7 @@ export class ProductService {
   baseUrl = 'http://localhost:3001/products';
   constructor(private snackBar: MatSnackBar,
     private http: HttpClient) { }
-    
+
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'x', {
       duration: 3000,

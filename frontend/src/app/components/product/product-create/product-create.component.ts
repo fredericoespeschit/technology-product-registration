@@ -15,10 +15,8 @@ export class ProductCreateComponent {
   }
   constructor(private ProductService: ProductService,
     private router: Router) { }
-  
-  ngOnInit(): void {
 
-  }
+  ngOnInit(): void {}
 
   createProduct(): void {
     this.ProductService.create(this.product).subscribe(() => {
